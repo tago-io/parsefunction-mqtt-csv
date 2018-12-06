@@ -13,7 +13,7 @@ if (temperatureItem) {
   const actualTemperatureInFahrenheit = temperatureItem.value;
   const celsius = (5 / 9) * (actualTemperatureInFahrenheit - 32);
 
-// Then, we output the value and unit.
+  // Then, we output the value and unit.
   temperatureItem.value = celsius;
   temperatureItem.unit = 'C';
 }
