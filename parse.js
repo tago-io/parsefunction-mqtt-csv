@@ -12,7 +12,7 @@
 ** from the device that you don't want.
 */
 // Add ignorable variables in this array.
-const ignore_vars = ['rf_chain', 'channel', 'modulation', 'app_id', 'dev_id', 'time', 'gtw_trusted', 'port'];
+const ignore_vars = ['rf_chain', 'channel', 'modulation', 'app_id', 'dev_id', 'time', 'gtw_trusted', 'port', 'payload_raw'];
 
 
 /**
@@ -160,5 +160,8 @@ if (ttn_payload) {
   // Parse the gateway fields,
   if (ttn_payload.metadata) {
     payload = payload.concat(parseGatewayFields(ttn_payload.metadata, serie));
+    delete ttn_payload.metadata;
   }
+
+  payload = payload.concat(toTagoFormat(ttn_payload, serie));
 }
