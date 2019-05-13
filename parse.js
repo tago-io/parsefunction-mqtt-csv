@@ -28,7 +28,7 @@ const ignore_vars = ['rf_chain', 'channel', 'modulation', 'app_id', 'dev_id', 't
 function toTagoFormat(object_item, serie, prefix = '') {
   const result = [];
   for (const key in object_item) {
-    if (ignore_vars.includes(key)) continue;
+    if (ignore_vars.includes(key) || object_item[key] === null) continue;
 
     if (typeof object_item[key] == 'object') {
       result.push({
