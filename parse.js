@@ -6,7 +6,7 @@
 **
 ** Testing:
 ** You can do manual tests to this parse by using the Device Emulator. Copy and Paste the following code:
-** [{ "variable": "ttn_payload", "value": "{ \"payload\": \"0109611395\" }" }]
+** [{ "variable": "ttn_payload", "value": "{ \"payload_raw\": \"0109611395\" }" }]
 **
 ** The ignore_vars variable in this code should be used to ignore variables
 ** from the device that you don't want.
@@ -140,7 +140,7 @@ if (ttn_payload) {
  
   // Parse the ttn_payload to JSON format (it comes in a String format)
   ttn_payload = JSON.parse(ttn_payload.value);
-  const raw_payload = ttn_payload.payload || ttn_payload.payload_raw;
+  const raw_payload = ttn_payload.payload_raw || ttn_payload.payload;
   if (raw_payload) {
     // Parse the payload from your sensor to function parsePayload
     try {
