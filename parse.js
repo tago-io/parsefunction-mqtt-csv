@@ -147,7 +147,7 @@ if (ttn_payload) {
       payload = toTagoFormat(parsePayload(raw_payload), serie);
     } catch (e) {
       // Catch any error in the parse code and send to parse_error variable.
-      payload = payload.concat({ variable: 'parse_error', value: e.message || e });
+      payload = [{ variable: 'parse_error', value: e.message || e }];
     }
   }
 
