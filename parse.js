@@ -6,7 +6,7 @@
 **
 ** Testing:
 ** You can do manual tests to this parse by using the Device Emulator. Copy and Paste the following code:
-** [{ "variable": "ttn_payload", "value": "{ \"payload_raw\": \"0109611395\" }" }]
+** [{ "variable": "ttn_payload", "value": "{ \"payload\": \"0109611395\" }" }]
 **
 ** The ignore_vars variable in this code should be used to ignore variables
 ** from the device that you don't want.
