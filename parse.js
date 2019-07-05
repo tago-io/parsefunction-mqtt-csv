@@ -46,7 +46,7 @@ payload = payload.filter(x => !ignore_vars.includes(x.variable));
 
 // Payload is an environment variable. Is where what is being inserted to your device comes in.
 // Payload always is an array of objects. [ { variable, value...}, {variable, value...} ...]
-const payload_raw = payload.find(x => x.variable === 'payload_raw' || x.variable === 'payload');
+const payload_raw = payload.find(x => x.variable === 'payload_raw' || x.variable === 'payload' || x.variable === 'data');
 if (payload_raw) {
   // Get a unique serie for the incoming data.
   const { value, serie } = payload_raw;
