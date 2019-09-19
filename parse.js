@@ -36,6 +36,7 @@ function parsePayload(payload_raw) {
     return data;
 
   } catch (e) {
+    console.log(e);
     // Return the variable parse_error for debugging.
     return [{ variable: 'parse_error', value: e.message }];
   }
@@ -53,6 +54,6 @@ if (payload_raw) {
 
   // Parse the payload_raw to JSON format (it comes in a String format)
   if (value) {
-    payload = parsePayload(value).map(x => ({ ...x, serie, time: x.time || time }));;
+    payload = payload.concat(parsePayload(value).map(x => ({ ...x, serie, time: x.time || time })));
   }
 }
