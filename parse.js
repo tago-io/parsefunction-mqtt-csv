@@ -49,10 +49,10 @@ payload = payload.filter(x => !ignore_vars.includes(x.variable));
 const payload_raw = payload.find(x => x.variable === 'payload_raw' || x.variable === 'payload' || x.variable === 'data');
 if (payload_raw) {
   // Get a unique serie for the incoming data.
-  const { value, serie } = payload_raw;
+  const { value, serie, time } = payload_raw;
 
   // Parse the payload_raw to JSON format (it comes in a String format)
   if (value) {
-    payload = parsePayload(value).map(x => ({ ...x, serie }));
+    payload = parsePayload(value).map(x => ({ ...x, serie, time: x.time || time }));;
   }
 }
