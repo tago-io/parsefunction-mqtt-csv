@@ -5,11 +5,11 @@
 ** Note: Additional variables can be created by the Network Server and sent directly to the bucket. Normally they aren't handled here.
 ** 
 ** Testing:
-** You can do manual tests to this parse by using the Device Emulator. Copy and Paste the following code:
+** You can do manual tests to the parse by using the Device Emulator. Copy and Paste the following JSON:
 ** [{ "variable": "data", "value": "0109611395" }]
 */
 
-// Search the payload variable in the payload environment variable. It's contents is always [ { variable, value...}, {variable, value...} ...]
+// Search the payload variable in the payload global variable. It's contents is always [ { variable, value...}, {variable, value...} ...]
 const payload_raw = payload.find(x => x.variable === 'payload_raw' || x.variable === 'payload' || x.variable === 'data');
 if (payload_raw) {
   try {
