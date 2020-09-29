@@ -1,10 +1,12 @@
 /* This is an a generic payload parser for LoRaWAN. It will work for any network server.
 ** The code find the "payload" variable, sent by your sensor, and parse it if exists.
-** The content of payload is always an Hexadecimal value.
-**
+** The content of payload variable is always an Hexadecimal value.
+** 
+** Note: Additional variables can be created by the Network Server and sent directly to the bucket. Normally they aren't handled here.
+** 
 ** Testing:
 ** You can do manual tests to this parse by using the Device Emulator. Copy and Paste the following code:
-** [{ "variable": "payload", "value": "0109611395" }]
+** [{ "variable": "data", "value": "0109611395" }]
 */
 
 // Search the payload variable in the payload environment variable. It's contents is always [ { variable, value...}, {variable, value...} ...]
