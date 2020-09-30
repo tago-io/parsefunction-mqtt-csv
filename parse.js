@@ -16,7 +16,7 @@ if (payload_raw) {
     // Convert the data from Hex to Javascript Buffer.
     const buffer = Buffer.from(payload_raw.value, 'hex');
 
-    // Lets say you have a payload of 3 bytes.
+    // Lets say you have a payload of 5 bytes.
     // 0 - Protocol Version
     // 1,2 - Temperature
     // 3,4 - Humidity
