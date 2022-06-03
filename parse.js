@@ -24,7 +24,7 @@ if (mqtt_payload) {
   ];
 
   // This will concat the content sent by your device with the content generated in this payload parser.
-  // It also adds the field "serie" to be able to group in tables and other widgets.
-  const serie = String(new Date().getTime());
-  payload = payload.concat(data).map(x => ({ ...x, serie }));
+  // It also adds the field "group" to be able to group in tables and other widgets.
+  const group = String(new Date().getTime());
+  payload = payload.concat(data).map(x => ({ ...x, group }));
 }
